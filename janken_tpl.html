@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- スクリプトとhtmlをつなぐ -->
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/sample.css">
+<title>じゃんけん</title>
+</head>
+<body>
+
+  <main id="bloom">
+  
+  
+  <div class="back">
+    <img src="./img/haikei1.jpg" alt="背景">
+  </div>
+  <h1 class="title">ドラゴンボールクエスト</h1>
+  <div class="huriza">
+    <div class="HP">
+      HP<div id="hu-HP" > 10</div>/10
+    </div>
+    <img  class="huriza-img" src="./img/初期.jpg" alt="フリーザ">
+    <div class="display">
+      <div class="subhands">フリーザが襲いかかってきた!!</div>
+      <span id="pc_hands"></span>
+    </div>
+  </div>
+  
+
+  <div class="command"> 
+    <ul>
+      <li id="gu_btn">グー(龍拳)</li>
+      <li id="cho_btn">チョキ(気円斬)</li>
+      <li id="par_btn">パー(かめはめ波)</li>
+    </ul>
+    <div class="HP">
+      HP<div id="HP" >  10</div>/10
+    </div>
+  </div>
+</main>
+
+<footer></footer>
+<script>
+//じゃんけん用のSCRIPTを書いてください
+
+
+
+// チョキ押したとき
+    let n = 10   
+    let e = 10
+    $("#cho_btn").on("click",function(){
+      const r =Math.ceil(Math.random()*3)
+      console.log(r);
+      $("#pc_hands").html('<img class="hands-img" src="./img/kienzan.jpg" alt="気円斬">');
+      
+      const countUp = () => {
+            $("#pc_hands").html('');
+          }
+          setTimeout(countUp, 700);
+
+        if(r==1){
+          // グー
+          $(".subhands").html('<img class="hands-img" src="./img/gu.jfif" alt="フリーザ">')
+          const countUp = () => {
+            $(".subhands").html('YOU LOSE');
+          }
+          setTimeout(countUp, 700);
+
+          if(n != 1){
+            n -= 1
+            $("#HP").html(n);
+          }
+          else if (n==1){
+            $("#bloom").html('<img class="bloom" src="./img/kuririn.jfif" alt="bloom">');
+            const countUp = () => {
+            $("#bloom").html('<img class="bloom" src="./img/bloom.jpg" alt="bloom">');
+            }
+            setTimeout(countUp, 1200);
+          }
+        }
+
+        if(r==2){
+          // パー
+          $(".subhands").html('<img class="hands-img" src="./img/par.jfif" alt="フリーザ">')
+          const countUp = () => {
+            $(".subhands").html('YOU WIN');
+          }
+          setTimeout(countUp, 700);
+
+          if(e != 1){
+            e -= 1
+            $("#hu-HP").html(e);
+          }
+          else if (e==1){
+            $("#bloom").html('<img class="bloom" src="./img/saigo.png" alt="bloom">');
+            const countUp = () => {
+            $("#bloom").html('<img class="bloom" src="./img/cong.jpg" alt="bloom">');
+            }
+            setTimeout(countUp, 1200);
+          }
+        }
+        
+        if(r==3){
+          // チョキ
+          $(".subhands").html('<img class="hands-img" src="./img/tyoki.jfif" alt="フリーザ">')
+          const countUp = () => {
+            $(".subhands").html('DRAW');
+          }
+          setTimeout(countUp, 700);
+        }
+    });
+
+    // パー押したとき
+    $("#par_btn").on("click",function(){
+      const r =Math.ceil(Math.random()*3)
+      console.log(r);
+      $("#pc_hands").html('<img class="hands-img" src="./img/kamehameha.jpg" alt="かめはめ波">');
+      const countUp = () => {
+            $("#pc_hands").html('');
+          }
+          setTimeout(countUp, 700);
+
+      if(r==1){
+        // グー
+        $(".subhands").html('<img class="hands-img" src="./img/gu.jfif" alt="フリーザ">')
+        const countUp = () => {
+            $(".subhands").html('YOU WIN');
+          }
+          setTimeout(countUp, 700);
+          if(e != 1){
+            e -= 1
+            $("#hu-HP").html(e);
+          }
+          else if (e==1){
+            $("#bloom").html('<img class="bloom" src="./img/saigo.png" alt="bloom">');
+            const countUp = () => {
+            $("#bloom").html('<img class="bloom" src="./img/cong.jpg" alt="bloom">');
+            }
+            setTimeout(countUp, 1200);
+          }
+      }
+      if(r==2){
+        // パー
+        $(".subhands").html('<img class="hands-img" src="./img/par.jfif" alt="フリーザ">')
+        const countUp = () => {
+            $(".subhands").html('DRAW');
+          }
+          setTimeout(countUp, 700);
+      }
+      if(r==3){
+        // チョキ
+        $(".subhands").html('<img class="hands-img" src="./img/tyoki.jfif" alt="フリーザ">')
+        const countUp = () => {
+            $(".subhands").html('YOU LOSE');
+          }
+          setTimeout(countUp, 700);
+          if(n != 1){
+            n -= 1
+            $("#HP").html(n);
+          }
+          else if (n==1){
+            $("#bloom").html('<img class="bloom" src="./img/kuririn.jfif" alt="bloom">');
+            const countUp = () => {
+            $("#bloom").html('<img class="bloom" src="./img/bloom.jpg" alt="bloom">');
+            }
+            setTimeout(countUp, 1200);
+          }
+      }
+    });
+
+    // グー押したとき
+    $("#gu_btn").on("click",function(){
+      const r =Math.ceil(Math.random()*3)
+      console.log(r);
+      $("#pc_hands").html('<img class="hands-img" src="./img/ryuken.png" alt="龍拳">');
+      const countUp = () => {
+            $("#pc_hands").html('');
+          }
+          setTimeout(countUp, 700);
+
+      if(r==1){
+        // グー
+        $(".subhands").html('<img class="hands-img" src="./img/gu.jfif" alt="フリーザ">')
+        const countUp = () => {
+            $(".subhands").html('DRAW');
+          }
+          setTimeout(countUp, 700);
+      }
+      if(r==2){
+        // チョキ
+        $(".subhands").html('<img class="hands-img" src="./img/par.jfif" alt="フリーザ">')
+        const countUp = () => {
+            $(".subhands").html('YOU LOSE');
+          }
+          setTimeout(countUp, 700);
+          if(n != 1){
+            n -= 1
+            $("#HP").html(n);
+          }
+          else if (n==1){
+            $("#bloom").html('<img class="bloom" src="./img/kuririn.jfif" alt="bloom">');
+            const countUp = () => {
+            $("#bloom").html('<img class="bloom" src="./img/bloom.jpg" alt="bloom">');
+            }
+            setTimeout(countUp, 1200);
+          }
+      }
+      if(r==3){
+        // パー
+        $(".subhands").html('<img class="hands-img" src="./img/tyoki.jfif" alt="フリーザ">')
+        const countUp = () => {
+            $(".subhands").html('YOU WIN');
+          }
+          setTimeout(countUp, 700);
+          if(e != 1){
+            e -= 1
+            $("#hu-HP").html(e);
+          }
+          else if (e==1){
+            $("#bloom").html('<img class="bloom" src="./img/saigo.png" alt="bloom">');
+            const countUp = () => {
+            $("#bloom").html('<img class="bloom" src="./img/cong.jpg" alt="bloom">');
+            }
+            setTimeout(countUp, 1200);
+          }
+      }
+      
+    });
+    
+
+    
+    // $("#gu_btn").on("click",function(){
+    //   $("#judgment").html('<img src="./img/daikiti.png">')
+    // });
+    // html要素に上書きを行える方法
+    // document.querySelector("#gu_btn").onclick=function(e){
+    //   console.log(e)
+    //   alert('Hello world')
+    
+
+
+
+    
+    
+    
+
+</script>
+</body>
+</html>

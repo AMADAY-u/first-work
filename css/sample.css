@@ -1,0 +1,118 @@
+body{
+    margin:0;
+    padding:0;
+    text-align:left;
+    font-size: 32px;
+}
+header{
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+main{
+    border-bottom:1px solid #ccc;
+}
+footer{
+    background-color: #fff;
+    border-bottom:1px solid #ccc;
+    text-align: center;
+}
+p{
+    font-size:200%;
+    text-align: center;
+    border-bottom:1px solid #fff;
+    height:200px;
+}
+ul{
+    padding: 0;
+    border-top: 1px solid #000000;
+    display:table;  /* 定義 */
+    table-layout: fixed;
+    width:100%;
+}
+li{
+    text-align: center;
+    list-style-type:none;
+    border: 1px solid #666;
+    background-color:goldenrod;
+    display:table-cell;  /* 定義 */
+    cursor: pointer;
+}
+li:hover{
+    background: #0066CC;
+    color:#fff;
+}
+
+/* 背景 */
+img{
+    width: 100%;
+    height: 100%;
+}
+.bloom{
+    width: 100%;
+    height: auto;
+}
+.back{
+    position: relative;
+    
+}
+
+.title{
+    position: absolute;
+    top: 6%;
+    left: 50%;
+    color:red;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    transform: translate3d(-50%,-50%,0);
+    font-size: 70px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+.huriza{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-50%,0);
+    text-align: center;
+}
+.huriza-img{
+    width: 200px;
+    height: auto;
+}
+.hands-img{
+    width: auto;
+    height: 120px;
+}
+.display{
+    display: flex;
+}
+.subhands{
+    max-width: 100%;
+    color:gold;
+    text-align: center;
+    font-size: 50px;
+    margin: auto;
+}
+#pc_hands{
+    width: auto;
+    height: 120px;
+}
+.command{
+    position: absolute;
+    top: 92%;
+    left: 50%;
+    color: #000;
+    letter-spacing: 0.1em;
+    transform: translate3d(-50%,-50%,0);
+    font-size: 32px;
+    width: 100%;
+}
+.HP{
+    color: #fff;
+    font-size: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
